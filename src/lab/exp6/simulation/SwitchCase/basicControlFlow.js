@@ -117,7 +117,7 @@ window.view = {
   				this.showDay('case5Id', this.currentSiblingElement.id, 'fridayImages', 'strNullId', 'Friday');
   				break;
 			case 6:
-  				this.showDay('case6Id', this.currentSiblingElement.id, 'saturdayImages', 'strNullId', 'Saturday');
+  				this.showDay('case6Id', this.currentSiblingElement.id, 'sundayImages', 'strNullId', 'Saturday');
   				break;
 			case 7:
   				this.showDay('case7Id', this.currentSiblingElement.id, 'sundayImages', 'strNullId', 'Sunday');
@@ -221,7 +221,7 @@ window.view = {
 			this.codeExecutionWithColour();
 	 	if (this.currentSiblingElement.className === 'break redClass')
 			this.codeExecutionWithColourAndId('closeBrc1Id');
-		if (1 <= model.inputNumber && model.inputNumber <= 6) {
+		if (1 <= model.inputNumber && model.inputNumber <= 5) {
 	 		if (this.nextSiblingElement.id === 'holidayId')
 				this.codeExecutionWithColourAndId('elseIfId');
 	 		else if (this.nextSiblingElement.id === 'workingdayId') {
@@ -233,6 +233,8 @@ window.view = {
 		if ( model.inputNumber > 7 ) {
 	 		if (this.nextSiblingElement.id === 'holidayId')
 				this.codeExecutionWithColourAndId('elseIfId');
+          //  else if (this.nextSiblingElement.id === 'holidayId1') 
+			//	this.codeExecutionWithColourAndId('elseIfId1');
 	 		else if (this.nextSiblingElement.id === 'workingdayId') 
 				this.codeExecutionWithColourAndId('elseId');
 	 		else if (this.nextSiblingElement.id === 'invalidIPId') {
@@ -240,13 +242,20 @@ window.view = {
 				this.setInnerHtml('outputDayId', 'INVALID INPUT');
 	 		}
 	 	}
-	 	if (model.inputNumber === 7) {
+	 	if ((model.inputNumber >= 6 ) ){
 	 		if (this.nextSiblingElement.id === 'holidayId') {
 				this.codeExecutionWithColour();
 				this.changeOpacity('holidayImage');
 				this.setInnerHtml('outputDayId', 'HOLIDAY');
 	 		}
 	 	}
+		/*else if (model.inputNumber === 6 ) {
+	 		if (this.nextSiblingElement.id === 'holidayId1') {
+				this.codeExecutionWithColour();
+				this.changeOpacity('holidayImage');
+				this.setInnerHtml('outputDayId', 'HOLIDAY');
+	 		}
+	 	}*/
 		if (this.nextSiblingElement.id === 'ifId')
 			this.codeExecutionWithColour();
 		if (this.nextSiblingElement.id === 'closeBrc2Id' || this.nextSiblingElement.id === 'elseId' || this.nextSiblingElement.id === 'elseIfId') {
