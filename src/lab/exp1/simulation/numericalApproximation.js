@@ -6,7 +6,7 @@
 window.model = {
 	inputValueA
 : '', // user input a.
-	inputValueB: '', // usre input b.
+	inputValueB: '', // user input b.
 	sum: 0, //total sum that compute by computeSum method. 
 	width: 1, //width of executing one step.
 	//  computeSum: compute total sum of area under cos curve.
@@ -278,8 +278,25 @@ window.view = {
 	/* validationInput: check validation of input that is given by user and if input value is valid 
 	then make text field and ok button disable and make start button enable. */
 	validationInput: function () {
+		if(document.getElementById('valueA').value>=1 && document.getElementById('valueA').value<=10)
+		{
 		var valueA1 = this.getValue('valueA');
+		}
+		else
+		{
+			alert("Invalid Input");
+			validationInput();
+		}
+		if(document.getElementById('valueB').value>=1 && document.getElementById('valueB').value<=10)
+		{
 		var valueB1 = this.getValue('valueB');
+		}
+		else
+		{
+			alert("Invalid input");
+			validationInput();
+		}
+		
 		var valueA2 = parseInt(valueA1);
 		var valueB2 = parseInt(valueB1);
 		if (valueA1 === '' || valueB1 === '') {
