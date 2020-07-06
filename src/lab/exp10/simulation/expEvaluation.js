@@ -6,8 +6,20 @@ window.model = {
 	isBracket: false,
 	highlight : [],
 	getInputs: function () {
+		if(document.getElementById('a').value>=1 && document.getElementById('a').value<=10){
 		this.a = document.getElementById('a').value
+		}
+		else{
+			alert("The input of 'a' is out of range and change the input");
+			return getInputs();
+		}
+		if(document.getElementById('b').value>=1 && document.getElementById('b').value<=10){
 		this.b = document.getElementById('b').value
+		}
+		else{
+			alert("The input of 'b' is out of range and change the input");
+			return getInputs();
+		}
 		this.c = document.getElementById('c').value
 		this.d = document.getElementById('d').value
 	},
