@@ -33,7 +33,15 @@ window.view = {
  		document.getElementById(y).style.display = 'block' 
  	},
 	getInput: function() {
+		if(document.getElementById('simpleLoopInput').value<=20 && document.getElementById('simpleLoopInput').value>=0)
+		{
 		var inputValue = document.getElementById('simpleLoopInput').value
+		}
+		else
+		{
+			alert("Invalid Input");
+			getInput();
+		}
 		model.inp = Number(inputValue)
 		this.clearExecutionSection()
 	},
